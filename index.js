@@ -45,6 +45,11 @@ const storage=multer.diskStorage({
         fn(null,req.body.img)
         // fn(null,"image1.jpg")
     }
+});
+
+app.get('/',(req,res)=>{
+    console.log("Route is Hitting");
+    return res.status(200).json({message:"Service is Running Fine"});
 })
 
 const upload=multer({storage:storage})
